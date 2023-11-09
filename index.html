@@ -1048,42 +1048,7 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
-
-<script>
-  const typedTextSpan = document.getElementById('typed-text');
-  const cursorSpan = document.getElementById('cursor');
-  const textArray = ["Amin Aenurahman", "Am1nCmd"];
-  const typingDelay = 200;
-  const erasingDelay = 100;
-  const newTextDelay = 2000; // Delay between current and next name
-  let textArrayIndex = 0;
-  let charIndex = 0;
-
-  function type() {
-    if (charIndex < textArray[textArrayIndex].length) {
-      typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(type, typingDelay);
-    } else {
-      setTimeout(erase, newTextDelay);
-    }
-  }
-
-  function erase() {
-    if (charIndex > 0) {
-      typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
-      charIndex--;
-      setTimeout(erase, erasingDelay);
-    } else {
-      textArrayIndex = (textArrayIndex + 1) % textArray.length;
-      setTimeout(type, typingDelay + 1100);
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", function() { // After DOM is loaded
-    if(textArray.length) setTimeout(type, newTextDelay + 250);
-  });
-</script>
+    
 </body>
 
 </html>
